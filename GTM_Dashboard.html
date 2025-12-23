@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GTM Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Weekly GTM Dashboard</h1>
+
+  <h2>Pipeline by Vertical</h2>
+  <canvas id="pipelineChart"></canvas>
+
+  <h2>Funnel Conversion Rates</h2>
+  <canvas id="funnelChart"></canvas>
+
+  <script>
+    const pipelineCtx = document.getElementById('pipelineChart');
+    new Chart(pipelineCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Restaurants', 'Coffee Shops', 'Wine Merchants'],
+        datasets: [{
+          label: 'Open Pipeline ($)',
+          data: [250000, 150000, 400000]
+        }]
+      }
+    });
+
+    const funnelCtx = document.getElementById('funnelChart');
+    new Chart(funnelCtx, {
+      type: 'line',
+      data: {
+        labels: ['Lead', 'SQL', 'Discovery', 'Proposal', 'Closed Won'],
+        datasets: [{
+          label: 'Conversion %',
+          data: [100, 45, 30, 18, 12]
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
