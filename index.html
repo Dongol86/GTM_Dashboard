@@ -3,488 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table22 RevOps Assessment | Islam Badr</title>
+    <title>Table22 - Weekly GTM Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        .chart-container { position: relative; width: 100%; height: 300px; }
-        /* Professional Palette */
-        :root {
-            --primary: #4f46e5; /* Indigo 600 */
-            --secondary: #10b981; /* Emerald 500 */
-            --accent: #f59e0b; /* Amber 500 */
-            --dark: #1e293b; /* Slate 800 */
-        }
     </style>
-    <!-- Chosen Palette: "Professional & Stylish" - Deep Indigo, Emerald, Slate -->
 </head>
-<body class="text-slate-700 antialiased">
+<body class="text-slate-800">
 
-    <!-- Navigation / Header -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold text-slate-900 tracking-tight">Table22 <span class="text-indigo-600">RevOps Assessment</span></span>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 pb-6 border-b border-slate-200">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900">Weekly GTM Pulse</h1>
+                <p class="text-slate-500 mt-1">Data Source: HubSpot | Period: Dec 16-22</p>
+            </div>
+            <div class="mt-4 md:mt-0 flex gap-3">
+                <div class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm">
+                    <span class="text-xs font-bold text-slate-400 uppercase block">Total Pipeline</span>
+                    <span class="font-bold text-indigo-600">$328,500</span>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <span class="text-sm text-slate-500 hidden sm:block">Candidate: <strong>Islam Badr</strong></span>
-                    <a href="#" class="bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition-colors">Download Report</a>
+                <div class="px-4 py-2 bg-indigo-600 rounded-lg shadow-sm text-white">
+                    <span class="text-xs font-bold text-indigo-200 uppercase block">Avg Deal Size</span>
+                    <span class="font-bold">$5,214</span>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
-
-        <!-- Section 1: Executive Summary -->
-        <section>
-            <div class="mb-6">
-                <h2 class="text-2xl font-bold text-slate-900">Executive Summary</h2>
-                <p class="text-slate-600 mt-2 max-w-3xl">
-                    This dashboard synthesizes GTM performance for the week of Dec 16-22. 
-                    While pipeline volume is healthy in our core "Wine Merchant" vertical, 
-                    <strong>Sales Velocity</strong> and <strong>Channel Efficiency</strong> data suggest a strategic pivot 
-                    towards Partner-led growth is necessary to accelerate revenue.
+        <!-- KPI Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            
+            <!-- Card 1: Sales Velocity -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-md transition-shadow">
+                <div class="absolute top-0 right-0 w-1 h-full bg-blue-500"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Sales Velocity</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">$42.5k<span class="text-sm font-normal text-slate-500">/mo</span></h3>
+                    </div>
+                    <div class="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                </div>
+                <p class="text-xs text-green-600 font-medium flex items-center">
+                    <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    +12% vs last month
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- KPI Card 1: Sales Velocity -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-indigo-600">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Sales Velocity</p>
-                            <h3 class="text-2xl font-bold text-slate-900 mt-1">$42.5k<span class="text-sm font-normal text-slate-400">/mo</span></h3>
-                        </div>
-                        <div class="p-2 bg-indigo-50 rounded-lg text-indigo-600 font-bold text-lg">🚀</div>
+            <!-- Card 2: Top Vertical -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-md transition-shadow">
+                <div class="absolute top-0 right-0 w-1 h-full bg-indigo-500"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Top Vertical</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">Wine Shops</h3>
                     </div>
-                    <p class="mt-4 text-sm text-slate-500">
-                        Measures revenue speed. 
-                        <br><span class="text-xs text-indigo-600 font-medium">Goal: $50k/mo by Q2</span>
-                    </p>
-                </div>
-
-                <!-- KPI Card 2: Pipeline Value -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-emerald-500">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Pipeline</p>
-                            <h3 class="text-2xl font-bold text-slate-900 mt-1">$328.5k</h3>
-                        </div>
-                        <div class="p-2 bg-emerald-50 rounded-lg text-emerald-600 font-bold text-lg">💰</div>
+                    <div class="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     </div>
-                    <p class="mt-4 text-sm text-slate-500">
-                        Across 63 active deals.
-                        <br><span class="text-xs text-emerald-600 font-medium">Avg Deal Size: $5,214</span>
-                    </p>
                 </div>
-
-                <!-- KPI Card 3: Days in Stage -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-amber-500">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Avg Days in Stage</p>
-                            <h3 class="text-2xl font-bold text-slate-900 mt-1">8.2 Days</h3>
-                        </div>
-                        <div class="p-2 bg-amber-50 rounded-lg text-amber-600 font-bold text-lg">⏱️</div>
-                    </div>
-                    <p class="mt-4 text-sm text-slate-500">
-                        Current bottleneck: Discovery.
-                        <br><span class="text-xs text-green-600 font-medium">↓ 0.9 days vs last week</span>
-                    </p>
-                </div>
-
-                <!-- KPI Card 4: Top Channel -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-blue-500">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Top Efficiency</p>
-                            <h3 class="text-2xl font-bold text-slate-900 mt-1">Partners</h3>
-                        </div>
-                        <div class="p-2 bg-blue-50 rounded-lg text-blue-600 font-bold text-lg">🤝</div>
-                    </div>
-                    <p class="mt-4 text-sm text-slate-500">
-                        62% Lead-to-Opp Rate.
-                        <br><span class="text-xs text-blue-600 font-medium">3x higher than Outbound</span>
-                    </p>
-                </div>
+                <p class="text-sm text-slate-500 font-medium">$156,000 Pipeline Value</p>
             </div>
-        </section>
 
-        <!-- Section 2: Pipeline Performance (Visuals) -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Card 3: Days in Stage -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-md transition-shadow">
+                <div class="absolute top-0 right-0 w-1 h-full bg-amber-500"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Avg Days in Stage</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">8.2 Days</h3>
+                    </div>
+                    <div class="p-2 bg-amber-50 text-amber-600 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                </div>
+                <p class="text-xs text-green-600 font-medium flex items-center">
+                    <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    -0.9 days vs last week
+                </p>
+            </div>
+
+            <!-- Card 4: Lead-to-Opp Rate -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-md transition-shadow">
+                <div class="absolute top-0 right-0 w-1 h-full bg-emerald-500"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Lead-to-Opp Rate</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">45%</h3>
+                    </div>
+                    <div class="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-500 font-medium">Top Channel: Partners (62%)</p>
+            </div>
+        </div>
+
+        <!-- Main Charts Area -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             
-            <!-- Chart: Pipeline by Vertical -->
+            <!-- Pipeline Chart -->
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Pipeline Composition by Vertical</h3>
-                <p class="text-sm text-slate-500 mb-6">"Wine Merchants" dominates value, but "Butcher Shops" shows strong emerging volume.</p>
-                <div class="chart-container">
+                <h3 class="text-sm font-bold text-slate-800 mb-6 uppercase tracking-wider border-b pb-4">Pipeline by Vertical</h3>
+                <div class="h-64 relative">
                     <canvas id="pipelineChart"></canvas>
                 </div>
             </div>
 
-            <!-- Chart: Funnel Efficiency -->
+            <!-- Lead Source Efficiency Chart (New Request) -->
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Funnel Conversion Waterfall</h3>
-                <p class="text-sm text-slate-500 mb-6">Identifying drop-off points. Qualification to Discovery (62%) is strong.</p>
-                <div class="chart-container">
-                    <canvas id="funnelChart"></canvas>
+                <div class="flex justify-between items-center mb-6 border-b pb-4">
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider">Lead-to-Opp by Channel</h3>
+                    <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Strategic Insight</span>
+                </div>
+                <div class="h-64 relative">
+                    <canvas id="sourceChart"></canvas>
                 </div>
             </div>
-        </section>
 
-        <!-- Section 3: Strategic Deep Dive (Lead Source) -->
-        <section class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="lg:col-span-1">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Channel Efficiency Analysis</h3>
-                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">
-                        <strong>The Data:</strong> Partner Referrals convert to Opportunities at 62%, significantly outperforming Cold Outbound (18%).
-                    </p>
-                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">
-                        <strong>The Strategy:</strong> We should not force high-intent Partner leads through the same BDR qualification queue as cold leads.
-                    </p>
-                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100 mt-4">
-                        <p class="text-xs font-bold text-indigo-800 uppercase mb-1">Recommendation</p>
-                        <p class="text-sm text-indigo-700 font-medium">Implement "Partner Fast-Lane" (Exercise 1) to route these leads directly to AEs.</p>
-                    </div>
-                </div>
-                <div class="lg:col-span-2">
-                    <div class="chart-container">
-                        <canvas id="sourceChart"></canvas>
-                    </div>
-                </div>
+        </div>
+
+        <!-- Funnel Section -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 mb-8">
+            <h3 class="text-sm font-bold text-slate-800 mb-6 uppercase tracking-wider border-b pb-4">Full Funnel Conversion</h3>
+            <div class="h-64 relative">
+                <canvas id="funnelChart"></canvas>
             </div>
-        </section>
+        </div>
 
-        <!-- Section 4: Process & Architecture (Exercise 1 Integration) -->
-        <section>
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Proposed Operational Architecture</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Architecture Diagram (CSS Implementation) -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                    <h3 class="text-lg font-bold text-slate-900 mb-4">The Unified Hybrid Pipeline</h3>
-                    <p class="text-sm text-slate-500 mb-6">A single 6-stage view with distinct entry points for PLG vs. Sales-Led leads.</p>
-                    
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <div class="w-24 text-xs font-bold text-slate-400 text-right pr-4">ENTRY</div>
-                            <div class="flex-1 flex gap-2">
-                                <div class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">Outbound</div>
-                                <div class="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">PLG (PQL)</div>
-                                <div class="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">Partner</div>
-                            </div>
-                        </div>
-                        <!-- Funnel Stages -->
-                        <div class="relative pl-28 border-l-2 border-slate-200 ml-4 space-y-2">
-                            <div class="bg-slate-50 p-3 rounded border border-slate-200 flex justify-between items-center">
-                                <span class="text-sm font-semibold text-slate-700">1. Qualified (SQL)</span>
-                                <span class="text-xs text-slate-400">10% Prob</span>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded border border-slate-200 flex justify-between items-center">
-                                <span class="text-sm font-semibold text-slate-700">2. Discovery</span>
-                                <span class="text-xs text-slate-400">30% Prob</span>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded border border-slate-200 flex justify-between items-center">
-                                <span class="text-sm font-semibold text-slate-700">3. Demo / Solution</span>
-                                <span class="text-xs text-slate-400">50% Prob</span>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded border border-slate-200 flex justify-between items-center">
-                                <span class="text-sm font-semibold text-slate-700">4. Negotiation</span>
-                                <span class="text-xs text-slate-400">75% Prob</span>
-                            </div>
-                            <div class="bg-emerald-50 p-3 rounded border border-emerald-200 flex justify-between items-center">
-                                <span class="text-sm font-bold text-emerald-700">5. Closed Won</span>
-                                <span class="text-xs text-emerald-600">100% Prob</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Automations List -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-4">High-Impact Automations</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-red-100 text-red-600 font-bold text-xs mt-0.5">1</div>
-                                <div class="ml-3">
-                                    <p class="text-sm font-bold text-slate-800">The "Zombie Killer" Alert</p>
-                                    <p class="text-xs text-slate-500 mt-1">Automatically flags deals stalled >14 days in Discovery to prevent forecast inflation.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold text-xs mt-0.5">2</div>
-                                <div class="ml-3">
-                                    <p class="text-sm font-bold text-slate-800">Auto-Stage Progression</p>
-                                    <p class="text-xs text-slate-500 mt-1">Moves deals to "Discovery" automatically when a meeting is booked via HubSpot link.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-amber-100 text-amber-600 font-bold text-xs mt-0.5">3</div>
-                                <div class="ml-3">
-                                    <p class="text-sm font-bold text-slate-800">Closed-Lost Intelligence</p>
-                                    <p class="text-xs text-slate-500 mt-1">Enforces "Loss Reason." If "Timing," enrolls in Nurture. If "Price," alerts Strategy.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 pt-6 border-t border-slate-100">
-                        <h4 class="text-sm font-bold text-slate-900 mb-2">Process Improvement: The Snapshot Protocol</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">
-                            <strong>Proposal:</strong> Implement automated weekly pipeline snapshots (Mondays @ 6AM).
-                            <br><strong>Benefit:</strong> Allows us to track "Flow Metrics" (e.g., slipped deals) and prevents historical data erasure when stages change.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 5: BDR Efficiency Table -->
-        <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-            <h3 class="text-lg font-bold text-slate-900 mb-4">BDR Performance Matrix</h3>
+        <!-- BDR Table -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+            <h3 class="text-sm font-bold text-slate-800 mb-4 uppercase tracking-wider">BDR Performance</h3>
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-sm">
                     <thead>
-                        <tr class="bg-slate-50 border-b border-slate-200 text-slate-500">
-                            <th class="py-3 px-4 font-semibold">Rep Name</th>
-                            <th class="py-3 px-4 text-center font-semibold">Calls</th>
-                            <th class="py-3 px-4 text-center font-semibold">Emails</th>
-                            <th class="py-3 px-4 text-center font-semibold text-indigo-600">Meetings</th>
-                            <th class="py-3 px-4 text-center font-semibold">Qualified Leads</th>
-                            <th class="py-3 px-4 text-right font-semibold">Efficiency (QL/Activity)</th>
+                        <tr class="text-slate-500 border-b border-slate-200">
+                            <th class="pb-3 font-medium">Rep Name</th>
+                            <th class="pb-3 text-center">Calls</th>
+                            <th class="pb-3 text-center">Emails</th>
+                            <th class="pb-3 text-center">Meetings</th>
+                            <th class="pb-3 text-center">Qualified Leads</th>
+                            <th class="pb-3 text-right">Efficiency</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100">
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3 px-4 font-medium text-slate-900">Sarah M. <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">Top Performer</span></td>
-                            <td class="py-3 px-4 text-center">85</td>
-                            <td class="py-3 px-4 text-center">120</td>
-                            <td class="py-3 px-4 text-center font-bold text-indigo-600">12</td>
-                            <td class="py-3 px-4 text-center">8</td>
-                            <td class="py-3 px-4 text-right font-mono text-slate-600">3.9%</td>
+                        <tr class="hover:bg-slate-50">
+                            <td class="py-3 font-medium text-slate-900">Sarah M. <span class="ml-2 text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Top Performer</span></td>
+                            <td class="py-3 text-center text-slate-600">85</td>
+                            <td class="py-3 text-center text-slate-600">120</td>
+                            <td class="py-3 text-center font-bold text-indigo-600">12</td>
+                            <td class="py-3 text-center text-slate-900">8</td>
+                            <td class="py-3 text-right font-mono">10.0%</td>
                         </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3 px-4 font-medium text-slate-900">James K.</td>
-                            <td class="py-3 px-4 text-center">72</td>
-                            <td class="py-3 px-4 text-center">95</td>
-                            <td class="py-3 px-4 text-center font-bold text-indigo-600">9</td>
-                            <td class="py-3 px-4 text-center">6</td>
-                            <td class="py-3 px-4 text-right font-mono text-slate-600">3.6%</td>
+                        <tr class="hover:bg-slate-50">
+                            <td class="py-3 font-medium text-slate-900">James K.</td>
+                            <td class="py-3 text-center text-slate-600">72</td>
+                            <td class="py-3 text-center text-slate-600">95</td>
+                            <td class="py-3 text-center font-bold text-indigo-600">9</td>
+                            <td class="py-3 text-center text-slate-900">6</td>
+                            <td class="py-3 text-right font-mono">9.4%</td>
                         </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3 px-4 font-medium text-slate-900">Mike R.</td>
-                            <td class="py-3 px-4 text-center">68</td>
-                            <td class="py-3 px-4 text-center">88</td>
-                            <td class="py-3 px-4 text-center font-bold text-indigo-600">11</td>
-                            <td class="py-3 px-4 text-center">7</td>
-                            <td class="py-3 px-4 text-right font-mono text-slate-600">4.5%</td>
+                        <tr class="hover:bg-slate-50">
+                            <td class="py-3 font-medium text-slate-900">Mike R. <span class="ml-2 text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">High Efficiency</span></td>
+                            <td class="py-3 text-center text-slate-600">68</td>
+                            <td class="py-3 text-center text-slate-600">88</td>
+                            <td class="py-3 text-center font-bold text-indigo-600">11</td>
+                            <td class="py-3 text-center text-slate-900">7</td>
+                            <td class="py-3 text-right font-mono">10.9%</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-white border-t border-slate-200 mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-400 text-sm">Table22 RevOps Assessment · Generated by Islam Badr</p>
         </div>
-    </footer>
+
+        <div class="mt-8 text-center text-slate-400 text-sm">
+            Generated for Table22 RevOps Assessment by Islam Badr
+        </div>
+
+    </div>
 
     <script>
-        // Common Chart Defaults
-        Chart.defaults.font.family = "'Inter', sans-serif";
-        Chart.defaults.color = '#64748b';
-        Chart.defaults.scale.grid.color = '#f1f5f9';
-
-        // --- Chart 1: Pipeline by Vertical (Data from Exercise2_Dashboard.xlsx) ---
-        // Data: Wine Merchants (156k), Butcher (82.5k), Cheese (54k), Restaurant (36k)
+        // Chart 1: Pipeline by Vertical
         const ctxPipeline = document.getElementById('pipelineChart').getContext('2d');
         new Chart(ctxPipeline, {
             type: 'bar',
             data: {
                 labels: ['Wine Merchants', 'Butcher Shops', 'Cheese/Bakery', 'Restaurants & Coffee'],
                 datasets: [{
-                    label: 'Pipeline Value',
+                    label: 'Pipeline Value ($)',
                     data: [156000, 82500, 54000, 36000],
-                    backgroundColor: [
-                        '#4f46e5', // Indigo
-                        '#ec4899', // Pink
-                        '#f59e0b', // Amber
-                        '#10b981'  // Emerald
-                    ],
-                    borderRadius: 4,
-                    barThickness: 40
+                    backgroundColor: ['#4f46e5', '#ec4899', '#f59e0b', '#10b981'],
+                    borderRadius: 4
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: '#1e293b',
-                        padding: 12,
-                        cornerRadius: 8,
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                // Tooltip Requirement: Handle multiline labels if needed
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
-                                }
-                            },
-                            label: function(context) {
-                                return 'Value: $' + context.raw.toLocaleString();
-                            }
-                        }
-                    }
-                },
+                plugins: { legend: { display: false } },
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function(value) { return '$' + value / 1000 + 'k'; }
-                        }
-                    },
-                    x: {
-                        grid: { display: false }
-                    }
+                    y: { beginAtZero: true, grid: { color: '#f1f5f9' }, ticks: { callback: v => '$' + v/1000 + 'k' } },
+                    x: { grid: { display: false } }
                 }
             }
         });
 
-        // --- Chart 2: Funnel Conversion (Data from Exercise2_Dashboard.xlsx) ---
-        // Rates: New->Qual(45%), Qual->Disc(61%), Disc->Demo(66%), Demo->Neg(64%), Neg->Won(61%)
-        const ctxFunnel = document.getElementById('funnelChart').getContext('2d');
-        new Chart(ctxFunnel, {
-            type: 'line',
-            data: {
-                labels: ['New Lead', 'Qualified', 'Discovery', 'Demo', 'Negotiation', 'Closed Won'],
-                datasets: [{
-                    label: 'Conversion Rate',
-                    data: [100, 45, 61, 66, 64, 61], // Normalized to 100 base for visualization
-                    borderColor: '#4f46e5',
-                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
-                    borderWidth: 3,
-                    pointBackgroundColor: '#fff',
-                    pointBorderColor: '#4f46e5',
-                    pointBorderWidth: 2,
-                    pointRadius: 6,
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: '#1e293b',
-                        padding: 12,
-                        cornerRadius: 8,
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                // Tooltip Requirement: Handle multiline labels if needed
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
-                                }
-                            },
-                            label: function(context) {
-                                return 'Conversion: ' + context.raw + '%';
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            callback: function(value) { return value + '%'; }
-                        }
-                    },
-                    x: {
-                        grid: { display: false }
-                    }
-                }
-            }
-        });
-
-        // --- Chart 3: Lead Source Efficiency (Strategic Insight) ---
-        // Data: Partners(62%), PLG(45%), Outbound(18%), Events(22%)
+        // Chart 2: Lead Source Efficiency (New Request)
         const ctxSource = document.getElementById('sourceChart').getContext('2d');
         new Chart(ctxSource, {
             type: 'bar',
             data: {
-                labels: ['Partner Referral', 'PLG / Product', 'Events', 'Cold Outbound'],
+                labels: ['Partner Referral', 'PLG Tool', 'Cold Outbound', 'Events'],
                 datasets: [{
-                    label: 'Lead-to-Opp Conversion %',
-                    data: [62, 45, 22, 18],
-                    backgroundColor: [
-                        '#4f46e5', // Indigo (Highlight)
-                        '#6366f1', // Lighter Indigo
-                        '#94a3b8', // Grey (Low perf)
-                        '#cbd5e1'  // Light Grey (Low perf)
-                    ],
-                    borderRadius: 4,
-                    barThickness: 30
+                    label: 'Lead-to-Opportunity Conversion Rate (%)',
+                    data: [62, 45, 18, 22],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4
                 }]
             },
             options: {
-                indexAxis: 'y', // Horizontal Bar
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: '#1e293b',
-                        padding: 12,
-                        cornerRadius: 8,
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                // Tooltip Requirement: Handle multiline labels if needed
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
-                                }
-                            },
-                            label: function(context) {
-                                return 'Conversion Rate: ' + context.raw + '%';
-                            }
-                        }
-                    }
-                },
+                indexAxis: 'y', // Horizontal Bar Chart
+                plugins: { legend: { display: false } },
                 scales: {
-                    x: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            callback: function(value) { return value + '%'; }
-                        }
-                    },
-                    y: {
-                        grid: { display: false }
-                    }
+                    x: { beginAtZero: true, max: 100, grid: { color: '#f1f5f9' }, ticks: { callback: v => v + '%' } },
+                    y: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Chart 3: Funnel Conversion
+        const ctxFunnel = document.getElementById('funnelChart').getContext('2d');
+        new Chart(ctxFunnel, {
+            type: 'line',
+            data: {
+                labels: ['New Lead', 'Qualified', 'Discovery', 'Demo', 'Negotiation', 'Won'],
+                datasets: [{
+                    label: 'Conversion Rate',
+                    data: [100, 45, 61, 66, 64, 61],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 100, grid: { color: '#f1f5f9' }, ticks: { callback: v => v + '%' } },
+                    x: { grid: { display: false } }
                 }
             }
         });
